@@ -1,0 +1,84 @@
+<ion-view view-title="CashBack Account">
+    <ion-content class="padding">
+		<div class="card">
+			<div class="item item-text-wrap text-center"  style="background-color: #11c1f3">
+				<h2><b>Choose your preferred option to receive cash rewards!!!.</b></h2>
+			</div>
+		</div>
+		<div class="list">
+			<label class="item item-radio">
+				<input type="radio" name="group" value="PayTM" ng-model="payment.option">
+					<div class="item-content"><b>PayTM Wallet</b></div> <i class="radio-icon ion-checkmark"></i>
+			</label>
+			<br>
+			<label class="item item-radio">
+				<input type="radio" name="group" value="MobiKwik" ng-model="payment.option">
+					<div class="item-content"><b>MobiKwik Wallet</b></div> <i class="radio-icon ion-checkmark"></i>
+			</label>
+			<br>
+			<label class="item item-radio">
+				<input type="radio" name="group" value="SavBankAccount" ng-model="payment.option">
+				<div class="item-content"><b>Savings Bank Account</b></div> <i class="radio-icon ion-checkmark"></i>
+			</label>
+			
+			<div ng-show="payment.option == 'SavBankAccount'">
+					<div class="list card padding">
+						<div class="item item-text-wrap text-center">
+							Enter bank Details!!!.
+						</div>
+					</div>
+					<label class="item item-input">
+						<span class="input-label">Bank Name</span>
+						<input type="text" ng-model="payment.bankName"/>
+					</label>
+				   <label class="item item-input">
+					   <span class="input-label">Account No.</span>
+						<input type="text" ng-model="payment.accountNum"/>
+					</label>			
+					<label class="item item-input">
+						<span class="input-label">Branch Name</span>
+						<input type="text" ng-model="payment.branchName"/>
+					</label>
+					<label class="item item-input">
+						<span class="input-label">City</span>
+						<input type="text" ng-model="payment.cityName"/>
+					</label>
+				</div>
+			</div>
+			<label class="item item-radio">
+				<input type="radio" name="group" value="CreditCard" ng-model="payment.option">
+					<div class="item-content"><b>Credit Card</b></div> <i class="radio-icon ion-checkmark"></i>
+			</label>
+			<div ng-show="payment.option == 'CreditCard'">
+					<div class="list card padding">
+						<div class="item item-text-wrap text-center">
+							Enter Credit Card Details!!!.
+						</div>
+					</div>
+					<label class="item item-input">
+						<span class="input-label">Bank Name</span>
+						<input type="text" ng-model="payment.bankName">
+					</label>
+				   <label class="item item-input">
+					   <span class="input-label">Credit Card No.</span>
+					   <input type="text" ng-model="payment.accountNum"/>
+					</label>			
+			</div>
+		</div>
+		<br>	
+		<div class ="row">
+			<div class= "col col-40 text-center">
+				<button ng-click="skip()" class="button icon-left button-positive">
+					Continue to add later!!!
+				</button>
+			</div>
+			<div class= "col col-20" ng-show="payment.option != undefined" >
+			</div>
+			<div class= "col col-40 text-center" ng-show="payment.option != undefined" >
+				<button ng-click="submit(payment)" class="button icon-left button-positive">
+					Submit!!!
+				</button>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

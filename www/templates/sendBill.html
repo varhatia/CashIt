@@ -1,0 +1,28 @@
+<ion-view view-title="Capture Bill" hide-back-button="false">
+    <ion-content class="padding">
+        <form ng-submit="SubmitPicture()">
+				<div class="row"> 
+					<div class="col text-center">
+						<div class="padding">
+							<button class="button button-block button-calm" ng-click="takePicture()">Capture Bill</button>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col text-center"> 
+						<div class="padding">
+							<img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
+							<img ng-show="imgURI === undefined" ng-src="./img/dummyBill.png">
+						</div>
+					</div>
+				</div>		
+				<div class="row"> 
+					<div class="col text-center">
+						<div class="padding">
+							<button type="submit" class="button button-block button-royal">Submit</button>
+						</div>
+					</div>
+				</div>
+		</form>	
+    </ion-content>
+</ion-view>

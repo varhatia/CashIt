@@ -1,0 +1,114 @@
+<ion-view  class="bar-calm" view-title="Deals Around You" hide-back-button="false">
+<div></div>	
+	<ion-tabs class="tabs-secondary tabs-icon-top tabs-color-active-positive">
+	<ion-tab title="Offers" icon-off="ion-social-dropbox-outline" icon-on="ion-social-dropbox">
+		<ion-view view-title="Offers">
+			<ion-content>
+				<ion-list>
+				<div class="bar bar-header item-input-inset">
+					<ion-search placeholder="Enter Location, Category, Shop Name" filter="search"></ion-search>
+				</div>
+				<ion-item>
+					<div class="row">
+						<div class="col col-20 text-center">
+							<b>Category</b>
+						</div>
+						<div class="col col-40 text-center">
+							<b>Shop</b>
+						</div>
+						<div class="col col-40 text-center">
+							<b>Offers</b>
+						</div>
+					</div>
+				</ion-item>	
+				<ion-item ng-repeat="offer in offersList | filter:search.value track by $index" ng-click=goToShop(offer) style="background-color: #FFFFFF">
+					<div class="row">
+						<div class="col col-20" align="center">
+							<img src="./img/{{offer.category}}.png" class="logo">
+								<div class="logoText">
+									{{offer.category}}
+								</div>
+						</div>
+						<div class="col col-40 text-center item-text-wrap">
+							<div class="row">
+								<div class="col text-center">
+									<h2><b>{{offer.storeName}}</b></h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col text-center">
+									<h3>{{offer.location}}</h3>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col text-center">
+									<h4>{{offer.distance}} km</h4>
+								</div>
+							</div>
+						</div>
+						<div class="col col-40 text-center item-text-wrap">
+							<div class="row">
+									<div class="col text-center">
+										<h3>{{offer.summary}}</h3>
+									</div>
+							</div>
+							<div>
+								<button class="button button-small button-calm">+ {{offer.offerCount}} more offers</button>
+							</div>
+						</div>
+					</div>
+				</ion-item>
+			</ion-list>
+			<ion-infinite-scroll on-infinite="loadMore()" distance="5%"></ion-infinite-scroll>	
+		</ion-content>
+	</ion-view>
+	</ion-tab>
+	<ion-tab title="Categories" icon-off="ion-ios-search" icon-on="ion-ios-search-strong">
+		<ion-view view-title="Categories">
+			<ion-content>
+				<ion-list>
+					<ion-item>
+						<div class="row" ng-click=showAllGroceries()>
+							<div class="col text-center">
+								Groceries
+							</div>
+						</div>
+					</ion-item>
+					<ion-item>
+						<div class="row" ng-click=showAllBC()>
+							<div class="col text-center">
+								Baby
+							</div>
+						</div>
+					</ion-item>
+					<ion-item>
+						<div class="row" ng-click=showAllApparael()>
+							<div class="col text-center">
+								Apparel    
+							</div>
+						</div>
+					</ion-item>
+					<ion-item>  
+						<div class="row" ng-click=showAllMedicine()>
+							<div class="col text-center">
+								Medicine    
+							</div>
+						</div>
+					</ion-item>
+				</ion-list>
+			</ion-content>
+		</ion-view>
+	</ion-tab>	
+	<ion-tab title="My Places" icon-off="ion-ios-heart-outline" icon-on="ion-ios-heart" ui-sref="app.myplace">
+		<ion-view>
+		    <ion-content>
+				<ion-list>
+					<ion-item class="text-center">
+						<button class="button button-large button-calm" align="center" ng-click=goToMyPlace()>Go Back To Your Places >></button>
+					</ion-item>
+				</ion-list>
+			</ion-content>
+		</ion-view>
+	</ion-tab>
+</ion-tabs>
+</ion-view>

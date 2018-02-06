@@ -1,0 +1,43 @@
+<ion-view view-title="FAQ's" hide-back-button="false">
+<ion-header-bar class="bar-positive">
+		<h1 class="title">Medicine</h1>
+</ion-header-bar>
+<ion-content>
+	<ion-list>
+		<ion-item ng-click=toggleDetail(0)>
+			<div class="row">
+				<div class="col item-text-wrap" align="Left">
+					<h3>How do I use the app ? What I need to do with XXX app?</h3>
+				</div>
+			</div>
+			<div class="row" ng-show="activePosition == 0"> 
+				<div class="col item-text-wrap">
+					<h3>Step 1: Sign in to the app and browse through the latest amazing deals from the our partner merchants in your locality</h3>
+				</div>
+			</div>
+			<div class="row"  ng-show="activePosition == 0"> 
+				<div class="col item-text-wrap">
+					<h3>Step 2: Visit our partner merchant and do the transaction.</h3>
+				</div>
+			</div>
+			<div class="row"  ng-show="activePosition == 0"> 
+				<div class="col item-text-wrap">
+					<h3>Step 3: Share your bill within 12 hours of bill generation either by using upload option or on whatsApp. That's it.</h3>
+				</div>
+			</div>
+		</ion-item>
+		<ion-item ng-click=toggleDetail(1)>
+			<div class="row">
+				<div class="col item-text-wrap" align="Left">
+					<h3>Do I earn cahback for referring friends?</h3>
+				</div>
+			</div>
+			<div class="row" ng-show="activePosition == 1"> 
+				<div class="col item-text-wrap">
+					<h3>Yes, you receive cashback for each successful referral. The refrred friend should not be already be a XXX app user. In case, the your referred contact is already referred by other user than the first person to refer will receive the cashback.</h3>
+				</div>
+			</div>
+		</ion-item>
+	</ion-list>
+</ion-content>
+</ion-view>

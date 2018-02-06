@@ -1,0 +1,13 @@
+	/* Empty. Add your own CSS if you like */
+/*
+.background, .background .pane, .background .item, .background .item-complex .item-content{
+    background-color: #CCCCFF;
+}
+*/
+
+{font-size:55px !important;}
+
+.card-red .item{
+  background: red;
+  item-text: #ffffff;
+}

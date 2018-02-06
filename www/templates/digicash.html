@@ -1,0 +1,62 @@
+<ion-view view-title="DigiCash" class="background">
+  <ion-content>
+    Table of submitted bills with current status
+	  Should have bll date, place, bill value, points, status
+</ion-view>
+<ion-view view-title="DigiCash" hide-back-button="false">
+<ion-content>
+	<div class = "row">
+		<div class="col text-center">
+			<button class="button button-calm">
+				<h3>DigiCash -> {{digiCash}} </h3>
+			</button>
+		<div class = "row">
+			<div class="col text-center">
+				<h5>+ {{nextDigiCash}} more to go</h5>
+			</div>
+		</div>
+		</div>
+	</div>
+	<ion-list>
+		<ion-item>
+			<div class="row">
+				<div class="col col-25">
+					<b>Date</b>
+				</div>
+				<div class="col col-25">
+					<b>Place</b>
+				</div>
+				<div class="col col-20">
+					<b>Bill</b>
+				</div>
+				<div class="col col-20">
+					<b>Points</b>
+				</div>
+				<div class="col col-10">
+					<b>Status</b>
+				</div>
+			</div>
+		</ion-item>
+		<ion-item ng-repeat="item in items">
+			<div class="row">
+				<div class="col col-25">
+					{{item.date}}
+				</div>
+				<div class="col col-25 item-text-wrap">
+					{{item.place}}
+				</div>
+				<div class="col col-20">
+					Rs. {{item.billValue}}
+				</div>
+				<div class="col col-20">
+					{{item.points}}
+				</div>
+				<div class="col col-10">
+					{{item.status}}
+				</div>
+			</div>
+		</ion-item>
+	</ion-list>
+</ion-content>
+</ion-view>
+
